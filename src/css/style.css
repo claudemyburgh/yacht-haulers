@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --scrollbar-track-color: theme('colors.primary.100');
+        --scrollbar-thumb-color: theme('colors.primary.500');
+        --scrollbar-thumb-border-width: 1px;
+        --scrollbar-thumb-border-color: theme('colors.primary.300');
+        ---scrollbar-width: 0.75rem;
+        ---scrollbar-height: 0.5rem;
+        --selection-background: theme('colors.primary.100');
+        --selection-color: theme('colors.primary.600');
+
+        --prism-bg: theme('colors.primary.200');
+        --prism-border-color: theme('colors.primary.300');
+        --prism-text-color: theme('colors.primary.900');
+        --prism-text-comment: theme('colors.primary.500');
+        --prism-namespace: theme('colors.teal.600');
+        --prism-function-name: theme('colors.blue.600');
+        --prism-function-num-bool: theme('colors.orange.900');
+        --prism-class-name-property: theme('colors.sky.900');
+        --prism-selector-keywords: theme('colors.pink.800');
+        --prism-string-char-variable: theme('colors.indigo.700');
+        --prism-operator-entity-url: theme('colors.sky.700');
+        --prism-inserted: theme('colors.green.500');
+        --prism-text-punctuation: theme("colors.gray.900");
+    }
+
+
+    /* Firefox */
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: var(---scrollbar-width);
+        height: var(---scrollbar-height);
+    }
+
+    *::-webkit-scrollbar-track {
+        background: var(--scrollbar-track-color);
+        border-radius: 0;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb-color);
+        border-radius: 0.75rem;
+        border: var(--scrollbar-thumb-border-width) solid var(--scrollbar-thumb-border-color);
+    }
+
+    *::selection {
+        background: var(--selection-background);
+        color: var(--selection-color)
+    }
+
+
+}
+
+@layer utilities {
+    .link {
+        @apply text-primary-500 hover:underline decoration-primary-500 decoration-2 underline-offset-4 font-semibold;
+    }
+}
+
+
+@layer components {
+    .wrapper {
+        @apply w-full max-w-7xl px-4 md:px-6 lg:px-8 mx-auto;
+    }
+}
